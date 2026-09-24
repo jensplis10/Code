@@ -1,0 +1,51 @@
+
+var(L=5)
+var(M=10)
+var(S=20)
+var(versuche=1)
+var(gewonnen=0)
+
+
+var(Schwierigkeit=input(Waehle die Schwierigkeit. Leicht(L), mittel(M) oder schwer(S)? Danach hast du 3 Versuche um die Zahl zu erraten.))
+
+if({Schwierigkeit}=L):
+var(Zahl=random(1,{L}))
+var(endzahl={L}),
+if({Schwierigkeit}=M):
+var(Zahl=random(1,{M}))
+var(endzahl={M}),
+if({Schwierigkeit}=S):
+var(Zahl=random(1,{S}))
+var(endzahl={S}),
+
+
+while({versuche}<=3):
+	if({versuche}=1):
+		print(Das ist dein {versuche}er Versuch)
+		var(Raten=input(Rate eine Zahl von col(red)1-{endzahl}colend().col(neon_green)))
+		colend(),
+	else:
+		print(Das ist dein {versuche}er Versuch)
+		var(Raten=input(Rate erneut col(neon_green)))
+		colend(),
+
+	if({Zahl}={Raten}):
+		print(Du hast richtig geraten!)
+		var(versuche=4)
+		var(gewonnen=1),
+	else:
+		print(Das ist falsch!)
+		if({Zahl}<{Raten}):
+			print(Die Zahl ist kleiner),
+		else:
+			print(Die Zahl ist groesser),
+	,
+	var(versuche=calc({versuche}+1))
+	enter(1),
+
+
+if({gewonnen}=0):
+print(Du hast verloren!)
+print(Die Zahl war col(neon_green){Zahl}colend().),
+
+

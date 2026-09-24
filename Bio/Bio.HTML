@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q-a</title>
+    <style>
+        body {
+            background-image: url('Fußabdruck.webp'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .question-container {
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="range"] {
+            width: 80%;\n
+            margin: 20px 0;
+        }
+        .slider-value {
+            font-size: 18px;\n
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const questions = [
+            {
+
+                question: "Wie kommst du morgens zur Schule?",
+                answers: [
+                    { text: "Fahrrad", points: 5 },
+                    { text: "Auto", points: 10 },
+                    { text: "Elektrische Fortbewegung (E-Bike, E-Scooter)", points: 15 },
+                    { text: "Öffentliche Verkehrsmittel", points: 15 }
+                ]
+            },
+            {
+                question: "Wie viele Mahlzeiten isst du am Tag?",          
+                type: "slider1", 
+                max: 5,    
+                min: 1 
+            },
+            {
+                question: "Bist du...",
+                answers: [
+                    { text: "Veganer", points: 3 },
+                    { text: "Vegetarier", points: 6 },
+                    { text: "Fleischkonsument", points: 9 }
+                ]
+            },
+            {
+                question: "Wie oft isst du tierische Produkte pro Woche?",            
+                type: "slider2", 
+                max: 28,    
+                min: 1 
+            },  
+        ];
+
+        let currentQuestionIndex = 0;
+        let totalPoints = 0;
+        const maxAnswers = questions.length;
+        let answersGiven = 0;
+
+        function showQuestion() {
+            const app = document.getElementById("app");
+            app.innerHTML = "";
+
+            if (currentQuestionIndex < questions.length && answersGiven < maxAnswers) {
+                const questionData = questions[currentQuestionIndex];
+
+                const questionContainer = document.createElement("div");
+                questionContainer.className = "question-container";
+
+                const questionElement = document.createElement("h2");
+                questionElement.innerText = questionData.question;
+                questionContainer.appendChild(questionElement);
+
+                if (questionData.type === "slider1") {
+                    const slider = document.createElement("input");
+                    slider.type = "range";
+                    slider.min = questionData.min;
+                    slider.max = questionData.max;
+                    slider.value = 0; 
+
+                    const sliderValue = document.createElement("div");
+                    sliderValue.className = "slider-value";
+                    sliderValue.innerText = `0 `;
+
+                    slider.oninput = () => {
+                        sliderValue.innerText = `${slider.value} `;
+                    };
+
+                    const submitButton = document.createElement("button");
+                    submitButton.innerText = "Bestätigen";
+                    submitButton.onclick = () => {
+                        totalPoints += parseInt(slider.value);
+                        answersGiven++;
+                        currentQuestionIndex++;
+                        showQuestion();
+                    };
+
+                    questionContainer.appendChild(sliderValue);
+                    questionContainer.appendChild(slider);
+                    questionContainer.appendChild(submitButton);
+                }
+                if (questionData.type === "slider2") {
+                    const slider = document.createElement("input");
+                    slider.type = "range";
+                    slider.min = questionData.min;
+                    slider.max = questionData.max;
+                    slider.value = 0; 
+
+                    const sliderValue = document.createElement("div");
+                    sliderValue.className = "slider-value";
+                    sliderValue.innerText = `0 mal`;
+
+                    slider.oninput = () => {
+                        sliderValue.innerText = `${slider.value} mal`;
+                    };
+
+                    const submitButton = document.createElement("button");
+                    submitButton.innerText = "Bestätigen";
+                    submitButton.onclick = () => {
+                        totalPoints += parseInt(slider.value);
+                        answersGiven++;
+                        currentQuestionIndex++;
+                        showQuestion();
+                    };
+
+                    questionContainer.appendChild(sliderValue);
+                    questionContainer.appendChild(slider);
+                    questionContainer.appendChild(submitButton);
+                
+                } else {
+
+                    questionData.answers.forEach(answer => {
+                        const answerButton = document.createElement("button");
+                        answerButton.innerText = answer.text;
+                        answerButton.onclick = () => {
+                            totalPoints += answer.points;
+                            answersGiven++;
+                            currentQuestionIndex++;
+                            showQuestion();
+                        };
+                        questionContainer.appendChild(answerButton);
+                    });
+                }
+
+                app.appendChild(questionContainer);
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const app = document.getElementById("app");
+            if (totalPoints > 100) {
+                app.innerHTML = `<h2>Dein Ergebnis: ${totalPoints} Punkte. Du bist schlecht!</h2>`;
+            } else {
+                app.innerHTML = `<h2>Dein Ergebnis: ${totalPoints} Punkte. Du bist toll!</h2>`;
+            }
+        }
+
+        showQuestion();
+    </script>
+</body>
+</html>

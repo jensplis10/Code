@@ -1,0 +1,11 @@
+(define mar (signature(enum "Apple" "Google" "Huawei" "Samsung" "Sony" "Xiaomi")))
+(define bet (signature(enum "iOS" "Android" "HarmonyOS" "Android" "Android" "Android")))
+(: bs (mar -> bet))
+(define bs
+(lambda (marke)
+(cond
+((equal? marke "Apple") "iOS")
+((equal? marke "Google") "Android")
+(else "..."))))
+
+(bs "Apple")

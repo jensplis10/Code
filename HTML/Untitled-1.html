@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q-a</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            padding: 20px;
+        }
+        .question-container {
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Jens ist ein",
+                answers: ["Nutten", "Hurensohn", "Bastard"]
+            },
+            {
+                question: "Penis",
+                answers: ["Hoden", "Eichel", "Big nigga"]
+            },
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function showQuestion() {
+            const app = document.getElementById("app");
+            app.innerHTML = "";
+
+            if (currentQuestionIndex < questions.length) {
+                const questionData = questions[currentQuestionIndex];
+
+                const questionContainer = document.createElement("div");
+                questionContainer.className = "question-container";
+
+                const questionElement = document.createElement("h2");
+                questionElement.innerText = questionData.question;
+                questionContainer.appendChild(questionElement);
+
+                questionData.answers.forEach(answer => {
+                    const answerButton = document.createElement("button");
+                    answerButton.innerText = answer;
+                    answerButton.onclick = () => {
+                        currentQuestionIndex++;
+                        showQuestion(); 
+                    };
+                    questionContainer.appendChild(answerButton);
+                });
+
+                app.appendChild(questionContainer);
+            } else {
+                app.innerHTML = "<h2>Gut gemacht du dummer hurensohn</h2>";
+            }
+        }
+        showQuestion();
+    </script>
+</body>
+</html>

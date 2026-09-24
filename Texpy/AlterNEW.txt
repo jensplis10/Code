@@ -1,0 +1,11 @@
+var(i=1)
+var(count=1)
+while({i}=1):
+	print(hallo)
+	if({count}=2):
+		var(i=2)
+		while({count}<10):
+			print({count})
+			var(count=calc({count}+1)),
+		,
+	var(count=calc({count}+1)),

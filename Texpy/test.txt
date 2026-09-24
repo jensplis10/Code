@@ -1,0 +1,8 @@
+print(random(1,10))
+emoji(heart)
+emoji(smile)
+emoji(sad)
+emoji(wink)
+emoji(waving)
+emoji(moon)
+emoji(texpy)

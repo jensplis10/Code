@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.0"
+group = "com.example"
+archivesBaseName = "event-logger-mod"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+minecraft {
+    version = "1.8.9-11.15.1.1722"
+    runDir = "run"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://files.minecraftforge.net/maven" }
+}
+
+dependencies {
+    // keep dependencies minimal; Forge artifacts will be fetched by Gradle when you run setupDecompWorkspace
+}
+
+// Create a compatible (older) Gradle wrapper if you want to generate it via gradle wrapper task
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14.1'
+}

@@ -1,0 +1,19 @@
+var(x=input(x))
+var(y=input(y))
+
+if(x=1)
+print(x True)
+if(y=1)
+print(y True),
+else
+print(y False),
+,
+
+
+else
+print(x False)
+if(y=1)
+print(y True),
+else
+print(y False),
+,

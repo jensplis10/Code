@@ -1,0 +1,53 @@
+;; Die ersten drei Zeilen dieser Datei wurden von DrRacket eingefügt. Sie enthalten Metadaten
+;; über die Sprachebene dieser Datei in einer Form, die DrRacket verarbeiten kann.
+#reader(lib "vanilla-reader.rkt" "deinprogramm" "sdp")((modname record) (read-case-sensitive #f) (teachpacks ()) (deinprogramm-settings #(#f write repeating-decimal #f #t none explicit #f ())))
+(define-record schueler
+make-schueler
+(schueler-name string)
+(schueler-alter natural)
+(schueler-gruppe boolean)
+(schueler-testergebnis testergebnis))
+
+(define-record testergebnis
+make-testergebnis
+(pretest natural)
+(posttest natural))
+
+
+(: test-diff (schueler -> integer))
+(check-expect (test-diff (make-schueler "Tan" 14 #t (make-testergebnis 44 76))) 32)
+(check-expect (test-diff (make-schueler "Mira" 16 #t (make-testergebnis 34 74))) 40)
+(check-expect (test-diff (make-schueler "Ozan" 17 #f (make-testergebnis 29 81))) 52)
+(check-expect (test-diff (make-schueler "Caro" 15 #f (make-testergebnis 95 94))) -1)
+(define test-diff
+(lambda (s)
+(- 
+(posttest (schueler-testergebnis s)) 
+(pretest (schueler-testergebnis s)))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(: mind-16? (schueler -> boolean))
+(define mind-16?
+(lambda (s)
+(if [>= (schueler-alter s) 16] #t #f)))
+
+
+
+(: name-unter-16 (schueler -> string))
+(define name-unter-16
+(lambda (s)
+(if [>= (schueler-alter s) 16] "" (schueler-name s))))

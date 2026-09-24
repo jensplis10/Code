@@ -1,0 +1,38 @@
+var(x=input(x))
+var(y=input(y))
+var(z=input(z))
+
+if({x}=True)
+print(x True)
+if({y}=True)
+print(y True)
+if({z}=True)
+print(z True),
+else
+print(z False),
+,
+else
+print(y False)
+if({z}=True)
+print(z True),
+else
+print(z False),
+,
+,
+else
+print(x False)
+if({y}=True)
+print(y True)
+if({z}=True)
+print(z True),
+else
+print(z False),
+,
+else
+print(y False)
+if({z}=True)
+print(z True),
+else
+print(z False),
+,
+,

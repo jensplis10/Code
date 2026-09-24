@@ -1,0 +1,13 @@
+var(alterPiaJahr=input(Pia Alter Jahr))
+var(alterPiaMonat=input(Pia Alter Monat))
+while({alterPiaJahr}<20):
+	while({alterPiaMonat}<12):
+		if({alterPiaMonat}=0):
+			print(--------------------------------)
+			print(Pia ist {alterPiaJahr} Jahre alt),
+		else:
+			print(Pia ist {alterPiaJahr} Jahre und {alterPiaMonat} Monate alt),
+		var(alterPiaMonat=calc(alterPiaMonat+1)),
+	var(alterPiaMonat=0)
+	var(alterPiaJahr=calc(alterPiaJahr+1)),
+	
