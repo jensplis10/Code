@@ -24,11 +24,11 @@
             cursor: pointer;
         }
         input[type="range"] {
-            width: 80%;\n
+            width: 80%;
             margin: 20px 0;
         }
         .slider-value {
-            font-size: 18px;\n
+            font-size: 18px;
         }
     </style>
 </head>
@@ -93,11 +93,11 @@
                     slider.type = "range";
                     slider.min = questionData.min;
                     slider.max = questionData.max;
-                    slider.value = 0; 
+                    slider.value = questionData.min;
 
                     const sliderValue = document.createElement("div");
                     sliderValue.className = "slider-value";
-                    sliderValue.innerText = `0 `;
+                    sliderValue.innerText = `${slider.value} `;
 
                     slider.oninput = () => {
                         sliderValue.innerText = `${slider.value} `;
@@ -115,17 +115,16 @@
                     questionContainer.appendChild(sliderValue);
                     questionContainer.appendChild(slider);
                     questionContainer.appendChild(submitButton);
-                }
-                if (questionData.type === "slider2") {
+                } else if (questionData.type === "slider2") {
                     const slider = document.createElement("input");
                     slider.type = "range";
                     slider.min = questionData.min;
                     slider.max = questionData.max;
-                    slider.value = 0; 
+                    slider.value = questionData.min;
 
                     const sliderValue = document.createElement("div");
                     sliderValue.className = "slider-value";
-                    sliderValue.innerText = `0 mal`;
+                    sliderValue.innerText = `${slider.value} mal`;
 
                     slider.oninput = () => {
                         sliderValue.innerText = `${slider.value} mal`;
@@ -143,9 +142,7 @@
                     questionContainer.appendChild(sliderValue);
                     questionContainer.appendChild(slider);
                     questionContainer.appendChild(submitButton);
-                
                 } else {
-
                     questionData.answers.forEach(answer => {
                         const answerButton = document.createElement("button");
                         answerButton.innerText = answer.text;
