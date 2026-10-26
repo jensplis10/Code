@@ -18,7 +18,7 @@ print("Press u to start/stop clicking. Press a to exit.")
 
 while True:
     if clicking:
-        pyautogui.click(button="left")
+        pyautogui.click(button="left")ä
     if keyboard.is_pressed("ä"):
         break
     time.sleep(0.002)
