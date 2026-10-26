@@ -41,6 +41,23 @@ word1ver = [test[0][1],test[1][1],test[2][1],test[3][1]]
 word2ver = [test[0][2],test[1][2],test[2][2],test[3][2]]
 word3hor = [test[1][0],test[1][1],test[1][2],test[1][3]]
 word4hor = [test[2][0],test[2][1],test[2][2],test[2][3]]
+
+for i in range(len(word1ver)):
+    if word1ver[i] == ".":
+        word1ver[i] = ""
+
+for i in range(len(word2ver)):
+    if word2ver[i] == ".":
+        word2ver[i] = ""
+
+for i in range(len(word3hor)):
+    if word3hor[i] == ".":
+        word3hor[i] = ""
+
+for i in range(len(word4hor)):
+    if word4hor[i] == ".":
+        word4hor[i] = ""
+
 print(*word2ver)
 print(*word1ver,"\n")
 print(*word3hor)
