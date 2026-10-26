@@ -14,10 +14,7 @@ for i in range(len(wort1)):
 with open("Bwinf_2026/451/A1_Kreuzwortkreuze/kreuz0a.txt","r",encoding="utf-8") as data:
     test = data.readlines()
 test = [line.strip() for line in test]
-for i in range(len(test)):
-    for j in range(4):
-        if test[i][j] == ".":
-            test[i][j] = ""
+print(*test)
 word1ver = [test[0][1],test[1][1],test[2][1],test[3][1]]
 word2ver = [test[0][2],test[1][2],test[2][2],test[3][2]]
 word3hor = [test[1][0],test[1][1],test[1][2],test[1][3]]
