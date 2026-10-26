@@ -1,9 +1,16 @@
+wörter = ["maus","esel","huhn","erde","ente"]
 
-secondVal = ["m","",
-        "",["a",""],["f",""],"",
-        "","",["","u"],"",
-            "s",""]
-print(secondVal[0],secondVal[3],secondVal[8],secondVal[10])
+wort1 = ["m","a","u","s"]
+wort2 = ["","","",""]
+wort3 = ["","","",""]
+wort4 = ["","","",""]
+print(*wort1)
 
 
+
+
+for i in range(len(wörter)):
+    print("")
+#with open("","r") as data:
+#    test = data.readlines()
 
