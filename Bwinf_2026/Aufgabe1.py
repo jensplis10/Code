@@ -1,9 +1,6 @@
-horizontalUp = ["","","",""]
-horizontalDown = ["","","",""]
-verticalLeft = ["","","",""]
-verticalRight = ["","","",""]
-secondVal = [0,0,
-             0,1,1,0,
-             0,0,1,0,
-             0,0]
+
+secondVal = ["m","","",["a",""],["f",""],"","","",["","u"],"","s",""]
+print(secondVal[0],secondVal[3],secondVal[8],secondVal[10])
+
+
 
