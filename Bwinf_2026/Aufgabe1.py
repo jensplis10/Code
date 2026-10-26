@@ -13,6 +13,6 @@ for i in range(len(wort1)):
 
 with open("Bwinf_2026/451/A1_Kreuzwortkreuze/kreuz0a.txt","r") as data:
     test = data.readlines()
-
+test = [line.strip() for line in test]
 print(test)
 
