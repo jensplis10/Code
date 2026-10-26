@@ -1,4 +1,3 @@
-wörter = ["maus","esel","huhn","erde","ente"]
 
 wort1 = ["m","a","u","s"]
 wort2 = ["","","",""]
@@ -9,8 +8,11 @@ print(*wort1)
 
 
 
-for i in range(len(wörter)):
+for i in range(len(wort1)):
     print("")
-#with open("","r") as data:
-#    test = data.readlines()
+
+with open("Bwinf_2026/451/A1_Kreuzwortkreuze/kreuz0a.txt","r") as data:
+    test = data.readlines()
+
+print(test)
 
