@@ -18,7 +18,7 @@ word1ver = [test[0][1],test[1][1],test[2][1],test[3][1]]
 word2ver = [test[0][2],test[1][2],test[2][2],test[3][2]]
 word3hor = [test[1][0],test[1][1],test[1][2],test[1][3]]
 word4hor = [test[2][0],test[2][1],test[2][2],test[2][3]]
-print(*word1ver)
-print(*word2ver ,"\n")
+print(*word2ver)
+print(*word1ver,"\n")
 print(*word3hor)
 print(*word4hor)
