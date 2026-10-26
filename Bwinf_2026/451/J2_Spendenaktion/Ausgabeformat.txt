@@ -1,0 +1,25 @@
+Stand: 17.9.2026
+_______________________
+Für jede Beispieleingabe (spenden01.txt bis spenden06.txt) muss die Ausgabe in der Dokumentation abgedruckt sein. Außerdem soll jede Ausgabe als Datei (spenden01_out.txt usw.) abgegeben werden, alle in einem Ausgaben-Ordner gesammelt.
+
+Die Ausgabe zu einer Beispieleingabe soll diesem Ausgabeformat folgen:
+
+Zunächst werden die Stimmschenkungen beschrieben. Für jede Schenkung wird eine eigene Zeile ausgegeben mit
+- dem Kennbuchstaben des schenkenden Projekts,
+- dem Kennbuchstaben des beschenkten Projekts und
+- der Anzahl der geschenkten Stimmen.
+
+Danach folgt die Übersicht über Stimmenanzahlen und Spendenbeträge. Für jedes Projekt wird eine eigene Zeile ausgegeben mit
+- dem Kennbuchstaben des Projekts,
+- seiner finalen Stimmenanzahl und
+- dem resultierenden Spendenbetrag.
+
+Hier eine (nicht unbedingt richtige) Ausgabe für das Beispiel aus dem Material:
+
+A C 1
+B C 2
+A 66 100
+B 40 300
+C 1340 200
+
+Projekt A schenkt Projekt C eine Stimme. Anschließend beschenkt Projekt B das Projekt C mit zwei Stimmen. Am Ende hat Projekt A 66 Stimmen, was 100€ Spendenbetrag entspricht, Projekt B liegt bei 40 Stimmen und 300€ und Projekt C hat am Ende 1340 Stimmen und erhält 200€ Spendenbetrag.
