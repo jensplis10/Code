@@ -10,7 +10,7 @@ class firstLayerNeuron:
         self.weight = weight
 
 
-auto = firstLayerNeuron(weight((randint(-100,100))/100, (randint(-100,100))/100))
-print(auto.weight.x)
 
-neuronsFirst = firstLayerNeuron
+
+neuronsFirst = [firstLayerNeuron(weight((randint(-100,100))/100, (randint(-100,100))/100)) for _ in range(100)]
+print(neuronsFirst[3].weight.x, neuronsFirst[3].weight.y)
