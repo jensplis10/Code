@@ -13,7 +13,7 @@ minuspoints = 0
 x = 0
 y = 0
 maxTrainingSteps = 500
-allNeurons = 100
+allNeurons = 200
 
 #Import old Neuron config if wanted
 with open("AIDATA/config.json", "r", encoding="utf-8") as f:
@@ -56,14 +56,14 @@ for trainingStep in range(maxTrainingSteps):
             #Adjusting the Weights
             if fire == True:
                 if neurons[neuronInConfig].x > 0:
-                    neurons[neuronInConfig].x = round(neurons[neuronInConfig].x - 0.01)
+                    neurons[neuronInConfig].x = round(neurons[neuronInConfig].x - 0.01 , 2)
                 if neurons[neuronInConfig].y > 0:
-                    neurons[neuronInConfig].y = round(neurons[neuronInConfig].y - 0.01)
+                    neurons[neuronInConfig].y = round(neurons[neuronInConfig].y - 0.01 , 2)
             else:
                 if neurons[neuronInConfig].x < 1:
-                    neurons[neuronInConfig].x = round(neurons[neuronInConfig].x + 0.01)
+                    neurons[neuronInConfig].x = round(neurons[neuronInConfig].x + 0.01 , 2)
                 if neurons[neuronInConfig].y < 1:
-                    neurons[neuronInConfig].y = round(neurons[neuronInConfig].y + 0.01)
+                    neurons[neuronInConfig].y = round(neurons[neuronInConfig].y + 0.01 , 2)
 
             if neurons[neuronInConfig].x * 1000 % 10 > 0:
                 print("Hello")
