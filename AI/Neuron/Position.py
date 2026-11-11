@@ -26,10 +26,16 @@ for i in range(5):
     print(neurons[i].x, neurons[i].y)
 
 
-for i in range(100):
+for i in range(500):
+    points = 0
+    minuspoints = 0
     for j in range(100):
         fire = neurons[j].activate(50, 50, 50)
-        print(neurons[j].activate(50, 50, 50))
+        if fire:
+            points += 1
+        else:
+            minuspoints += 1
+        
 
 
 
@@ -40,6 +46,18 @@ for i in range(100):
             else:
                 neurons[j].x += 0.01
                 neurons[j].y -= 0.01
+    print(points,minuspoints)
+    if minuspoints == 0:
+        break
 
+
+print("-------------------------------------\n\n\n")
+points = 0
+minuspoints = 0
 for i in range(100):
-    neurons.activate(50,50,50)
+    if neurons[i].activate(50,50,50) == True:
+        points += 1
+    else:
+        minuspoints += 1
+
+print(points,minuspoints)
