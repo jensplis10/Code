@@ -4,16 +4,16 @@ import json
 
 #Defining variables
 neurons = []
-wantedOutput = False
-limit = 50
+wantedOutput = True
+limit = 80
 entry1 = 50
-entry2 = 50
+entry2 = 30
 points = 0
 minuspoints = 0
 x = 0
 y = 0
 maxTrainingSteps = 500
-allNeurons = 100
+allNeurons = 500
 newConfig = True
 
 #Import old Neuron config if wanted
@@ -75,7 +75,7 @@ for trainingStep in range(maxTrainingSteps):
                     
 
     #Partial results of training
-    print(points,minuspoints)
+    print(f"{points} right, {minuspoints} wrong")
 
 
     if minuspoints == 0:
