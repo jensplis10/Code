@@ -72,9 +72,6 @@ for trainingStep in range(maxTrainingSteps):
                     neurons[neuronInConfig].x = round(neurons[neuronInConfig].x + 0.01 , 2)
                 if neurons[neuronInConfig].y < 1:
                     neurons[neuronInConfig].y = round(neurons[neuronInConfig].y + 0.01 , 2)
-
-            if neurons[neuronInConfig].x * 1000 % 10 > 0:
-                print("Hello")
                     
 
     #End of training
