@@ -1,10 +1,15 @@
 from random import randint
 
+with open("AI/AIDATA/config.json", "w", encoding="utf-8") as f:
+    neuralWeights = f
+
 
 class weight:
     def __init__(self, x:float=randint(-100,100)/100, y:float=randint(-100,100)/100):
         self.x = x
         self.y = y
+        neuralWeights[len(neuronsFirst)] = (self.x, self.y)
+
 class Neuron:
     def __init__(self, weight:weight):
         self.weight = weight
@@ -14,13 +19,13 @@ class Neuron:
 
 
 
-neuronsFirst = [Neuron(weight()) for _ in range(100)]
+neuronsFirst = [Neuron(weight()) for i in range(100)]
 print(neuronsFirst[3].weight.x, neuronsFirst[3].weight.y)
 
 
 print(neuronsFirst[2].activate(100, 50))
 
-
+f.write(neuralWeights)
 
 
 
