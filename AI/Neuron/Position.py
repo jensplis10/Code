@@ -17,8 +17,8 @@ class Neuron:
 
 
 for i in range(100):
-    x = randint(-100,100)/100
-    y = randint(-100,100)/100
+    x = randint(0,100)/100
+    y = randint(0,100)/100
     neuralWeights[f"neuron{i}"] = (x, y)
     neurons.append(Neuron(x,y))
 
@@ -61,3 +61,5 @@ for i in range(100):
         minuspoints += 1
 
 print(points,minuspoints)
+
+print(neuralWeights)
