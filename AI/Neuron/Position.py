@@ -61,7 +61,8 @@ print("-------------------------------------\n\n\n")
 points = 0
 minuspoints = 0
 for i in range(100):
-    if neurons[i].activate(50,50,50) == True:
+    fire = neurons[i].activate(50, 50, 50)
+    if fire == wantedOutput:
         points += 1
     else:
         minuspoints += 1
@@ -71,5 +72,3 @@ print(points,minuspoints)
 
 for i in range(100):
     print(round(neuralWeights[f"neuron{i}"][0]*100)/100 , round(neuralWeights[f"neuron{i}"][1]*100)/100)
-
-print(50 * 0.03 + 50 * 0.92 > 50)
