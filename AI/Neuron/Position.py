@@ -5,7 +5,7 @@ import json
 #Defining variables
 neurons = []
 wantedOutput = False
-limit = 80
+limit = 50
 entry1 = 50
 entry2 = 50
 points = 0
@@ -13,8 +13,8 @@ minuspoints = 0
 x = 0
 y = 0
 maxTrainingSteps = 500
-allNeurons = 200
-newConfig = False
+allNeurons = 100
+newConfig = True
 
 #Import old Neuron config if wanted
 with open("AIDATA/config.json", "r", encoding="utf-8") as f:
@@ -36,7 +36,7 @@ class Neuron:
 
 #Give every Neuron its weights
 for neuronInCreation in range(allNeurons):
-    if len(neuralWeights) < neuronInCreation:
+    if len(neuralWeights) > neuronInCreation:
         x = neuralWeights[f"neuron{neuronInCreation}"][0]
         y = neuralWeights[f"neuron{neuronInCreation}"][1]
     else:
