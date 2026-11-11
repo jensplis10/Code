@@ -74,7 +74,7 @@ for trainingStep in range(maxTrainingSteps):
                     neurons[neuronInConfig].y = round(neurons[neuronInConfig].y + 0.01 , 2)
                     
 
-    #End of training
+    #Partial results of training
     print(points,minuspoints)
 
 
