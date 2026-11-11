@@ -7,7 +7,7 @@ neurons = []
 wantedOutput = True
 limit = 80
 entry1 = 50
-entry2 = 31
+entry2 = 30
 points = 0
 minuspoints = 0
 x = 0
@@ -72,6 +72,7 @@ for trainingStep in range(maxTrainingSteps):
                     neurons[neuronInConfig].x = round(neurons[neuronInConfig].x + 0.01 , 2)
                 if neurons[neuronInConfig].y < 1:
                     neurons[neuronInConfig].y = round(neurons[neuronInConfig].y + 0.01 , 2)
+                
                     
 
     #Partial results of training
