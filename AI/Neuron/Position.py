@@ -64,6 +64,7 @@ for i in range(100):
 print(points,minuspoints)
 
 
-print([round(neuralWeights[f"neuron{i}"])for i in range(100)])
+for i in range(100):
+    print(round(neuralWeights[f"neuron{i}"][0]*100)/100 , round(neuralWeights[f"neuron{i}"][1]*100)/100)
 
 print(50 * 0.03 + 50 * 0.92 > 50)
