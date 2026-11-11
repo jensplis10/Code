@@ -10,7 +10,7 @@ class weight:
     def __init__(self, x:float=randint(-100,100)/100, y:float=randint(-100,100)/100):
         self.x = x
         self.y = y
-        neuralWeights[len(neuronsFirst)] = (self.x, self.y)
+        neuralWeights[f"neuron"] = (self.x, self.y)
 
 class Neuron:
     def __init__(self, weight:weight):
