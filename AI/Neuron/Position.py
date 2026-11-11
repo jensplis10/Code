@@ -27,7 +27,7 @@ class Neuron:
         self.x = x
         self.y = y
     def activate(self, entry1:float, entry2:float, sw:float):
-        return entry1 * self.x + entry2 * self.x > sw
+        return entry1 * self.x + entry2 * self.y > sw
 
 
 #Give every Neuron its weights
@@ -56,14 +56,14 @@ for trainingStep in range(maxTrainingSteps):
             #Adjusting the Weights
             if fire == True:
                 if neurons[neuronInConfig].x > 0:
-                    neurons[neuronInConfig].x -= 0.01
+                    neurons[neuronInConfig].x = round(neurons[neuronInConfig].x - 0.01)
                 if neurons[neuronInConfig].y > 0:
-                    neurons[neuronInConfig].y -= 0.01
+                    neurons[neuronInConfig].y = round(neurons[neuronInConfig].y - 0.01)
             else:
                 if neurons[neuronInConfig].x < 1:
-                    neurons[neuronInConfig].x += 0.01
+                    neurons[neuronInConfig].x = round(neurons[neuronInConfig].x + 0.01)
                 if neurons[neuronInConfig].y < 1:
-                    neurons[neuronInConfig].y += 0.01
+                    neurons[neuronInConfig].y = round(neurons[neuronInConfig].y + 0.01)
 
             if neurons[neuronInConfig].x * 1000 % 10 > 0:
                 print("Hello")
