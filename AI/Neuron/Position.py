@@ -46,6 +46,7 @@ for i in range(500):
             else:
                 neurons[j].x += 0.01
                 neurons[j].y -= 0.01
+        neuralWeights[f"neuron{j}"] = (x, y)
     print(points,minuspoints)
     if minuspoints == 0:
         break
@@ -63,3 +64,5 @@ for i in range(100):
 print(points,minuspoints)
 
 print(neuralWeights)
+
+print(50 * 0.03 + 50 * 0.92 > 50)
