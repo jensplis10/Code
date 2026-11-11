@@ -3,6 +3,7 @@ from collections import defaultdict
 
 neurons = []
 wantedOutput = False
+limit = 50
 with open("AIDATA/config.json", "w", encoding="utf-8") as f:
     neuralWeights = f
     neuralWeights = defaultdict(list)
@@ -30,7 +31,7 @@ for i in range(500):
     points = 0
     minuspoints = 0
     for j in range(100):
-        fire = neurons[j].activate(50, 50, 50)
+        fire = neurons[j].activate(50, 50, limit)
         if fire == wantedOutput:
             points += 1
         else:
@@ -61,7 +62,7 @@ print("-------------------------------------\n\n\n")
 points = 0
 minuspoints = 0
 for i in range(100):
-    fire = neurons[i].activate(50, 50, 50)
+    fire = neurons[i].activate(50, 50, limit)
     if fire == wantedOutput:
         points += 1
     else:
