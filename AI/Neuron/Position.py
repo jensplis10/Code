@@ -1,6 +1,8 @@
 from random import randint
 
-with open("AI/AIDATA/config.json", "w", encoding="utf-8") as f:
+
+neuronsFirst = []
+with open("AIDATA/config.json", "w", encoding="utf-8") as f:
     neuralWeights = f
 
 
