@@ -1,34 +1,33 @@
 from random import randint
 from collections import defaultdict
 
-neuronsFirst = []
+neurons = []
 with open("AIDATA/config.json", "w", encoding="utf-8") as f:
     neuralWeights = f
     neuralWeights = defaultdict(list)
 
-
-class weight:
-    def __init__(self, x:float=randint(-100,100)/100, y:float=randint(-100,100)/100):
+class Neuron:
+    def __init__(self, x:float,y:float):
         self.x = x
         self.y = y
-        neuralWeights[f"neuron{len(neuronsFirst)}"] = (self.x, self.y)
-
-class Neuron:
-    def __init__(self, weight:weight):
-        self.weight = weight
-    def activate(self, entry1:float, sw:float):
-        return entry1 * self.weight.x > sw
+    def activate(self, entry1:float, entry2:float, sw:float):
+        return entry1 * self.x + entry2 * self.x> sw
 
 
 
+for i in range(100):
+    x = randint(-100,100)/100
+    y = randint(-100,100)/100
+    neuralWeights[f"neuron{i}"] = (x, y)
+    neurons.append(Neuron(x,y))
 
-neuronsFirst = [Neuron(weight()) for _ in range(100)]
-print(neuronsFirst[3].weight.x, neuronsFirst[3].weight.y)
+for i in range(5):
+    print(neurons[i].x, neurons[i].y)
 
 
-print(neuronsFirst[2].activate(100, 50))
+print(neurons[2].activate(50, 50, 50))
 
-f = (neuralWeights)
+#f = (neuralWeights)
 
 
 
