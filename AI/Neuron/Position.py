@@ -5,9 +5,9 @@ import json
 #Defining variables
 neurons = []
 wantedOutput = True
-limit = 80
+limit = 80  #The Limit has to be smaller than entry1 + entry2 otherwise it wont work
 entry1 = 50
-entry2 = 30.01
+entry2 = 30
 points = 0
 minuspoints = 0
 x = 0
