@@ -18,8 +18,11 @@ newConfig = False
 
 #Import old Neuron config if wanted
 with open("AIDATA/config.json", "r", encoding="utf-8") as f:
-    neuralWeights = json.load(f)
-    neuralWeights = defaultdict(list)
+    if newConfig == True:
+        neuralWeights = defaultdict(list)
+    else:
+        neuralWeights = json.load(f)
+    
 
 
 #Make a Neuron
@@ -33,16 +36,12 @@ class Neuron:
 
 #Give every Neuron its weights
 for neuronInCreation in range(allNeurons):
-    if newConfig == True:
+    if len(neuralWeights) < neuronInCreation:
+        x = neuralWeights[f"neuron{neuronInCreation}"][0]
+        y = neuralWeights[f"neuron{neuronInCreation}"][1]
+    else:
         x = randint(0,100)/100
         y = randint(0,100)/100
-    else:
-        if len(neuralWeights) < neuronInCreation:
-            x = neuralWeights[f"neuron{neuronInCreation}"][0]
-            y = neuralWeights[f"neuron{neuronInCreation}"][1]
-        else:
-            x = randint(0,100)/100
-            y = randint(0,100)/100
     neuralWeights[f"neuron{neuronInCreation}"] = (x, y)
     neurons.append(Neuron(x,y))
 
