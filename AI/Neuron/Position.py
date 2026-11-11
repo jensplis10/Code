@@ -1,11 +1,12 @@
 from random import randint
 from collections import defaultdict
+import json
 
 neurons = []
 wantedOutput = False
-limit = 50
+limit = 80
 with open("AIDATA/config.json", "w", encoding="utf-8") as f:
-    neuralWeights = f
+    neuralWeights = json.load(f)
     neuralWeights = defaultdict(list)
 
 class Neuron:
@@ -58,6 +59,9 @@ for i in range(500):
         break
 
 
+print(f"\n\n\n{i} Trainings")
+
+
 print("-------------------------------------\n\n\n")
 points = 0
 minuspoints = 0
@@ -71,5 +75,11 @@ for i in range(100):
 print(points,minuspoints)
 
 
-for i in range(100):
-    print(round(neuralWeights[f"neuron{i}"][0]*100)/100 , round(neuralWeights[f"neuron{i}"][1]*100)/100)
+
+with open("AIDATA/config.json", "w", encoding="utf-8") as f:
+    neuralWeights = json.dump(neuralWeights,f)
+
+
+
+#for i in range(100):
+#    print(round(neuralWeights[f"neuron{i}"][0]*100)/100 , round(neuralWeights[f"neuron{i}"][1]*100)/100)
