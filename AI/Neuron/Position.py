@@ -41,11 +41,11 @@ for i in range(500):
 
         if fire == False and wantedOutput == True or fire == True and wantedOutput == 0:
             if fire == True:
-                neurons[j].x -= 0.01 if neurons[j].x > 0 else neurons[j].x
-                neurons[j].y -= 0.01 if neurons[j].y > 0 else neurons[j].y
+                neurons[j].x -= 0.01 if neurons[j].x > 0 else neurons[j].x == 0
+                neurons[j].y -= 0.01 if neurons[j].y > 0 else neurons[j].y == 0
             else:
-                neurons[j].x += 0.01 if neurons[j].x < 1 else neurons[j].x
-                neurons[j].y += 0.01 if neurons[j].y < 1 else neurons[j].y
+                neurons[j].x += 0.01 if neurons[j].x < 1 else neurons[j].x == 1
+                neurons[j].y += 0.01 if neurons[j].y < 1 else neurons[j].y == 1
         neuralWeights[f"neuron{j}"] = (neurons[j].x, neurons[j].y)
         if neuralWeights[f"neuron{j}"][1] >= 1:
             print("Hello")
