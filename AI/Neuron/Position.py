@@ -44,11 +44,11 @@ for i in range(500):
                 neurons[j].x -= 0.01 if neurons[j].x > 0 else neurons[j].x
                 neurons[j].y -= 0.01 if neurons[j].y > 0 else neurons[j].y
             else:
-                neurons[j].x += 0.01 if neurons[j].x < 100 else neurons[j].x
-                neurons[j].y += 0.01 if neurons[j].y < 100 else neurons[j].y
-                if neurons[j].y >= 100:
-                    print("Hello")
+                neurons[j].x += 0.01 if neurons[j].x < 1 else neurons[j].x
+                neurons[j].y += 0.01 if neurons[j].y < 1 else neurons[j].y
         neuralWeights[f"neuron{j}"] = (neurons[j].x, neurons[j].y)
+        if neuralWeights[f"neuron{j}"][1] >= 1:
+            print("Hello")
     print(points,minuspoints)
     if minuspoints == 0:
         break
