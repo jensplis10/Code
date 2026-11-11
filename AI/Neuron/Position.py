@@ -13,6 +13,7 @@ minuspoints = 0
 x = 0
 y = 0
 maxTrainingSteps = 500
+allNeurons = 100
 
 #Import old Neuron config if wanted
 with open("AIDATA/config.json", "r", encoding="utf-8") as f:
@@ -30,10 +31,10 @@ class Neuron:
 
 
 #Give every Neuron its weights
-for i in range(100):
+for neuronInCreation in range(allNeurons):
     x = randint(0,100)/100
     y = randint(0,100)/100
-    neuralWeights[f"neuron{i}"] = (x, y)
+    neuralWeights[f"neuron{neuronInCreation}"] = (x, y)
     neurons.append(Neuron(x,y))
 
 
@@ -76,7 +77,7 @@ for trainingStep in range(maxTrainingSteps):
         break #End of training
 
 #Returning entirety of Trainings
-print(f"\n\n\n{i} Trainings done")
+print(f"\n\n\n{trainingStep} Trainings done")
 
 #Saving Config
 for neuronInSaving in range(len(neuralWeights)):
