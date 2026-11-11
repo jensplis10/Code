@@ -2,7 +2,7 @@ from random import randint
 from collections import defaultdict
 
 neurons = []
-wantedOutput = True
+wantedOutput = False
 with open("AIDATA/config.json", "w", encoding="utf-8") as f:
     neuralWeights = f
     neuralWeights = defaultdict(list)
@@ -31,7 +31,7 @@ for i in range(500):
     minuspoints = 0
     for j in range(100):
         fire = neurons[j].activate(50, 50, 50)
-        if fire:
+        if fire == wantedOutput:
             points += 1
         else:
             minuspoints += 1
@@ -51,8 +51,7 @@ for i in range(500):
                 if neurons[j].y < 1:
                     neurons[j].y += 0.01
         neuralWeights[f"neuron{j}"] = (neurons[j].x, neurons[j].y)
-        if neuralWeights[f"neuron{j}"][1] >= 1:
-            print("Hello")
+
     print(points,minuspoints)
     if minuspoints == 0:
         break
