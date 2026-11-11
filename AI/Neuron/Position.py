@@ -5,7 +5,7 @@ import json
 neurons = []
 wantedOutput = False
 limit = 80
-with open("AIDATA/config.json", "w", encoding="utf-8") as f:
+with open("AIDATA/config.json", "r", encoding="utf-8") as f:
     neuralWeights = json.load(f)
     neuralWeights = defaultdict(list)
 
