@@ -82,7 +82,7 @@ for trainingStep in range(maxTrainingSteps):
         break #End of training
 
 #Returning entirety of Trainings
-print(f"\n\n\n{trainingStep} Trainings done")
+print(f"\n{trainingStep} Trainings done\n")
 
 #Saving Config
 for neuronInSaving in range(len(neuralWeights)):
