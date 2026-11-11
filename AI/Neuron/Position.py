@@ -7,7 +7,7 @@ neurons = []
 wantedOutput = True
 limit = 80
 entry1 = 50
-entry2 = 30
+entry2 = 30.01
 points = 0
 minuspoints = 0
 x = 0
@@ -30,8 +30,8 @@ class Neuron:
     def __init__(self, x:float,y:float):
         self.x = x
         self.y = y
-    def activate(self, entry1:float, entry2:float, sw:float):
-        return entry1 * self.x + entry2 * self.y > sw
+    def activate(self, entry1:float, entry2:float, limit:float):
+        return entry1 * self.x + entry2 * self.y > limit
 
 
 #Give every Neuron its weights
